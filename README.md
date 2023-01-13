@@ -1,6 +1,6 @@
 ﻿# Mage2 Module Bluethinkinc OrderDelete
 
-    ``bluethinkinc/module-OrderDelete``
+    ``bluethinkinc/orderdelete``
 
 -   [Main Functionalities](#markdown-header-main-functionalities)
 -   [Installation](#markdown-header-installation)
@@ -9,7 +9,7 @@
 
 ## Main Functionalities
 
-Delete button show on order details page
+The purpose of Order Delete module is to delete order from admin panel. This module is supported with multi-website and can be managed from admin section by admin users.
 
 ## Installation
 
@@ -29,7 +29,7 @@ Delete button show on order details page
     -   public repository `packagist.org`
     -   public github repository as vcs
 -   Add the composer repository to the configuration by running `composer config repositories.repo.magento.com composer https://repo.magento.com/`
--   Install the module composer by running `composer require bluethinkinc/module-OrderDelete`
+-   Install the module composer by running `composer require bluethinkinc/orderdelete`
 -   enable the module by running `php bin/magento module:enable Bluethinkinc_OrderDelete`
 -   apply database updates by running `php bin/magento setup:upgrade`\*
 -   Flush the cache by running `php bin/magento cache:flush`
