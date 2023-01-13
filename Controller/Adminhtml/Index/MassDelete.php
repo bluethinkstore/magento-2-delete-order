@@ -101,15 +101,14 @@ class MassDelete extends \Magento\Backend\App\Action implements HttpPostActionIn
 
                     // finally delete order data
                     $data->delete();
+
+                    // return with success message
+                    $this->messageManager->addSuccessMessage(
+                        __('A total of %1 record(s) have been deleted successfully!', $collectionSize)
+                    );
+                    return $this->resultRedirectFactory->create()->setPath('sales/order/index');
                 }
             }
-
-            // return with success message
-            $this->messageManager->addSuccessMessage(
-                __('A total of %1 record(s) have been deleted successfully!', $collectionSize)
-            );
-            return $this->resultRedirectFactory->create()->setPath('sales/order/index');
-
         } catch (\Exception $e) {
             $this->messageManager->addErrorMessage(__('Something went wrong!'));
             return $this->resultRedirectFactory->create()->setPath('sales/order/index');
