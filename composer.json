@@ -1,0 +1,21 @@
+{
+    "name": "bluethinkinc/magento2-module-order-delete",
+    "description": "Order Delete",
+    "type": "magento2-module",
+    "minimum-stability": "dev",
+    "version": "1.0.0",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Bluethinkinc"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Bluethinkinc\\OrderDelete\\": ""
+        }
+    }
+}
