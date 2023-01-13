@@ -72,12 +72,12 @@ class MassDelete extends \Magento\Backend\App\Action implements HttpPostActionIn
             $collection = $this->filter->getCollection($this->collectionFactory->create());
             $collectionSize = $collection->getSize();
 
-            if (is_array($collection)) {
+            if ($collectionSize >= 1) {
                 foreach ($collection as $data) {
 
                     // delete all invoices related to order
                     $invoices = $data->getInvoiceCollection();
-                    if (is_array($invoices)) {
+                    if ($invoices->getSize() >= 1) {
                         foreach ($invoices as $invoice) {
                             $invoice->delete();
                         }
@@ -85,16 +85,16 @@ class MassDelete extends \Magento\Backend\App\Action implements HttpPostActionIn
 
                     // delete all shipments related to data
                     $shipments = $data->getShipmentsCollection();
-                    if (is_array($shipments)) {
+                    if ($shipments->getSize() >= 1) {
                         foreach ($shipments as $shipment) {
                             $shipment->delete();
                         }
                     }
 
                     // delete all creditmemos related to data
-                    $creditMemos = $data->getCreditmemosCollection();
-                    if (is_array($creditMemos)) {
-                        foreach ($creditMemos as $creditmemo) {
+                    $creditmemos = $data->getCreditmemosCollection();
+                    if ($creditmemos->getSize() >= 1) {
+                        foreach ($creditmemos as $creditmemo) {
                             $creditmemo->delete();
                         }
                     }

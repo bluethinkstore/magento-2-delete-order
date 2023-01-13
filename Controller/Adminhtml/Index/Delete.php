@@ -76,7 +76,7 @@ class Delete extends \Magento\Framework\App\Action\Action
 
                 // delete all invoices related to order
                 $invoices = $order->getInvoiceCollection();
-                if (is_array($invoices)) {
+                if ($invoices->getSize() >= 1) {
                     foreach ($invoices as $invoice) {
                         $invoice->delete();
                     }
@@ -84,7 +84,7 @@ class Delete extends \Magento\Framework\App\Action\Action
 
                 // delete all shipments related to order
                 $shipments = $order->getShipmentsCollection();
-                if (is_array($shipments)) {
+                if ($shipments->getSize() >= 1) {
                     foreach ($shipments as $shipment) {
                         $shipment->delete();
                     }
@@ -92,7 +92,7 @@ class Delete extends \Magento\Framework\App\Action\Action
 
                 // delete all creditmemos related to order
                 $creditmemos = $order->getCreditmemosCollection();
-                if (is_array($creditmemos)) {
+                if ($creditmemos->getSize() >= 1) {
                     foreach ($creditmemos as $creditmemo) {
                         $creditmemo->delete();
                     }
