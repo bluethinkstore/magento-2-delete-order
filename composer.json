@@ -1,5 +1,5 @@
 {
-    "name": "bluethinkinc/magento2-module-order-delete",
+    "name": "bluethinkinc/orderdelete",
     "description": "Order Delete",
     "type": "magento2-module",
     "minimum-stability": "dev",
